@@ -20,7 +20,7 @@ public class OrderConsumer {
 	
     @JmsListener(destination = "order-queue")
     public void receiveOrder(OrderDTO order) {
-    	LOGGER.info("Order received: ()", order.getOrderId());
+    	LOGGER.info("Order received: {}", order.getOrderId());
         orderProcessingService.processOrder(order);
     }
 }

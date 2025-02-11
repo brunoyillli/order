@@ -7,6 +7,7 @@ public class OrderDTO {
     private int customerId;
     private String status;
     private List<ProductDTO> products;
+    
 	public String getOrderId() {
 		return orderId;
 	}
