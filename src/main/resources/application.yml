@@ -2,9 +2,9 @@ spring:
   application:
     name: order-manager
   activemq:
-    broker-url: tcp://localhost:61616
-    user: admin
-    password: admin
+    broker-url: ${JMS_URL}
+    user: ${JMS_USER}
+    password: ${JMS_PASSWORD}
   datasource:
     url: jdbc:postgresql://${DATABASE_URL}/order_db?sslmode=require
     username: ${DATABASE_USERNAME}

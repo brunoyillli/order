@@ -16,6 +16,7 @@ import io.github.brunoyillli.ordermanager.entity.Product;
 import io.github.brunoyillli.ordermanager.enums.OrderStatus;
 import io.github.brunoyillli.ordermanager.exception.OrderException;
 import io.github.brunoyillli.ordermanager.repository.OrderRepository;
+import jakarta.transaction.Transactional;
 
 @Service
 public class OrderProcessingService {
@@ -25,7 +26,7 @@ public class OrderProcessingService {
 	
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderProcessingService.class);
 
-	
+	@Transactional
 	public void processOrder(OrderDTO orderDTO) {
 		verifyOrder(orderDTO);
 		
